@@ -4,7 +4,6 @@ $consumer_key = "xxx";
 $consumer_secret = "xxx";
 $access_key = "xxx";
 $access_secret = "xxx";
-
 require_once('twitteroauth.php');// Use the twitteroauth library
 $twitter = new TwitterOAuth ($consumer_key ,$consumer_secret , $access_key , $access_secret );// Connect to Twitter using TwitterOAuth library
 
@@ -44,10 +43,10 @@ $animal = array("unicorn","raven","sparrow","scorpion","coyote","eagle","owl","l
 "kittens","horses","bunnies","zebras","dog","dragon","unicorn","snake","kitten","shark","dolphin","drop bear","leopard","bear","sting ray","kangaroo","owl","lizard","fish","rat","cheetah","cow","sheep","chicken","cheetah",
 "cow","cheetah","dog","cat","zebra","fish","rat","cow","sheep","chicken","wolf","scorpion","crocodile","alligator","cat","dog","lizard","queko","mice","turkey","squirrel","deer","wolf","narhwal","tropical shrimp",
 "monkey","chicken","tiger","dog", "horse", "cheetah", "leopard", "giraffe", "rabbit","horse","giraffe","zebra","cat","bear", "fish", "wolf", "fox", "cow", "calf", "horse", "foal", "frog", "clownfish", "pufferfish", "shrimp",
-"crab","tiger","chicken","horse","mule","cricket","bush baby","blobfish","sloth","cyclops","dragon","zombie","dragon","lizard","human","tiger","lion","komodo dragon","zombie","snake","wolf","lizard","dragon","velociraptor","snake",
+"crab","tiger","chicken","horse","mule","cricket","bush baby","blobfish","sloth","cyclops","dragon","zombie","dragon","lizard","human","tiger","lion","komono dragon","zombie","snake","wolf","lizard","dragon","velociraptor","snake",
 "zombie","tiger","tyrannosaurus rex","spider","scorpion","grizzly bear","frog","turtle","weasel","duck","kitten","chicken","peacock","toucan","troll","hippocampus","hydra","phoenix","gorgon","meerkat","owl","giraffe","arctic seal","alligator","chicken",
 "owl","scorpion","coyote","eagle","snake","lizard","lion","goldfish","dog","elephant","tiger","panda","camel","jellyfish","rabbit","mouse","bird","deer","rabbit","elk","pig","cow","bull","groundhog","uniduck",
-"pizzaduck", "crab", "cat", "tiger", "lion", "bear","unicorn","duck","kitten","horse","megalodon","pegasus","crab","spider","chicken","pig","ant","dragon","mermaid","owl","shark","dodo","racoon","flamingo","yeti",
+"pizzaduck", "crab", "cat", "tiger", "lion", "bear","unicorn","duck","kitten","horse","megalodon","pegasus","crab","spider","chicken","pig","ant","dragon","mermaid","owl","shark","dodo","raccoon","flamingo","yeti",
 "bigfoot","ogre","werewolf","vampire","dragon","cerberus","dog","lion","tiger","monkey","lizard","newt","koala","tapir","chicken","horse","pig","puppy","mouse","wild dog","wild cat","bear","duck","kitten","dragon",
 "turtle","duck","minotaur","loch ness monster","alien","bat","rat","chicken","sloth", "clown fish", "gazelle", "peacock", "camel", "elephant", "ostrich","shark","geese","duck","bat","pig","tiger","elephant","mink","tiger","cougar",
 "bat","bear","fish","stingray","rabbit");
@@ -74,4 +73,14 @@ $twitter->post('statuses/update', array('status' => $tweet1));// Post tweet
 $newTweetCount++;// Add one to output counter
 echo "<br/>";echo $newTweetCount." ".$tweet1."\n";echo "<br/>";// If bot is run manually, user will see the final tweet.
 
+// sleep for 2 seconds
+//sleep(2);
+//$myLastTweet = $twitter->get('statuses/user_timeline', array('user_id' => $myUserInfo->id_str, 'count' => 1));// Use ShouldBot's info to get ShouldBot's last tweet
+
+
+//if(strlen($tweet2) > 140)// If tweet is already too long, shorten it.
+  //$tweet1 = substr($tweet2, 0, 140);
+//$twitter->post('statuses/update', array('status' => $tweet2,'in_reply_to_status_id' => $myLastTweet[0]->id_str));// Post tweet
+//$newTweetCount++;// Add one to output counter
+//echo "<br/>";echo $newTweetCount." ".$tweet2."\n";echo "<br/>";// If bot is run manually, user will see the final tweet.
 ?>
