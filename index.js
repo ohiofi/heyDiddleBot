@@ -103,6 +103,8 @@ function tweetIt(tweetText){
   T.post('statuses/update', tweetObj, twitterCallback)
 }
 
+tweetIt(generateText());
+
 setInterval(()=>{
   tweetIt(generateText())
 }, 1000*60*60*2); //ms*s*m*h
