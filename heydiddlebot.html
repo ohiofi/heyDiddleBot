@@ -1,0 +1,67 @@
+<html>
+  <body>
+    <h1 id="poem">JavaScript allows you to code interactive things... like changing text if a button is pressed.</h1>
+    <button type="button" onClick="changeTextFunction()">Click Me</button>
+
+    <script>
+	
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+    // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+      function changeTextFunction() {
+		var sortedKeys = Object.keys(rhymes).sort();
+		sortedKeys=shuffle(sortedKeys);
+		
+		
+        var rhymeSet1=rhymes[sortedKeys[0]];
+        var rhymeSet2=rhymes[sortedKeys[1]];
+        rhymeSet1=shuffle(rhymeSet1);
+        rhymeSet2=shuffle(rhymeSet2);
+        adj=shuffle(adj);
+        animal=shuffle(animal);
+        synonymsForFun=shuffle(synonymsForFun);
+        synonymsForLaughed=shuffle(synonymsForLaughed);
+        document.getElementById("poem").innerHTML = "Hey "+rhymeSet1[0]+" "+rhymeSet1[0]+", the "+animal[0]+" & the "+rhymeSet1[1]+", the "+animal[1]+" jumped over the "+rhymeSet2[0]+". The "+adj[0]+" "+animal[2]+" "+synonymsForLaughed[0]+", to see such "+synonymsForFun[0]+" & the "+animal[3]+" ran away with the "+rhymeSet2[1]+".";
+      }
+      var rhymes = {
+        "am":["clam","cam","dam","ram","lamb","graham","sham","tram","exam","madame","program","jam","telegram"],
+        "ay":["clay","play","sleigh","spray","stray","tray","display","essay","fillet","highway","résumé","stairway","bouquet","padre","valet","Will Forte","USA","ballet","buffet","fiancé","subway","Norway"],
+        "aw":["jaw","claw","straw","slaw","saw","paw","gaping maw","Utah","flaw","law","shaw","outlaw"],
+        "ee":["flee","knee","tree","key","ski","pea","bee","algae","army","sea","debris","tv","referee","Tennessee", "bourgeoisie","CD","DVD"],
+        "ed":["bed","bread","head","shed","spread","thread","thoroughbred"],
+        "et":["jet","net","pet","vet","brunette","coronet","moist towelette","cigarette","cadet"],
+        "est":["chest","nest","vest","guest","test","pest"],
+        "ie":["eye","fly","fry","guy","pie","spy","tie"]
+      };
+      var adj = ["fluffy","big","fat","dumb","stupid","ugly","unappealing","tall","short","pleasant","cute","smelly","stinky","annoying","fun","short","small","athletic","nerdy","smart","invisible","tall","short","fat","pudgy","ugly","skinny","ratchet","tan","cool","gnarly","scrawny","chubby","thug","pale","gucci","gangsta","short","ghetto","colossal","squishy","cute","fluffy","smart","invisible","vexed","heartbroken","scared","depressed","sly","sneaky","obsessed","possessed","interested","fearful","shy","proud","abandoned","altrusic","bite-sized","dizzy","clear-cut","elliptical","clumsy","crazy","funny","skinny","tall","smart","young","nervous","fast","smart","invisible","fat","annoying","dumb","ugly","fat","stupid","mean","Annoying","stupid","dumb","ugly","short","Awesome","ugly","unapealing","ugly","loser","pretty","cute","attractive","unattractive","nerd","geek","popular","smart","dumb","idiot","Funny", "Smart", "Cool", "Fast","soft","funny","pretty","ugly","stupid", "yellow", "red", "blue", "green", "white", "black", "gray", "magenta", "orange", "purple", "indigo", "soft", "calm", "furious", "excited", "happy", "anxious", "embarrassed","funny","dumb","disgusting","unattractive","attractive","dumb","crippled","fast","oversized","lovely","gross","crazy","funky","loser","rested","weirdo","rusty","funny","booger eater","deformed", "nonfunctional","do do dunderhead","booger eating crumbum","ugly","weird","sad","humongous","funny","Disgusting","ugly","enormous","weird","stupid","pretty","hideous","bland","random","dumb","microscopic","oblivious","touchy","twitchy","depressed","orange","blue","Lime Green","black","Purple","white","indigo","turquoise","gigantic","dark","tiny","bright","creepy","tall","pale","small","Tane","strong","fast","aggressive","shy","outgoing","Sunny", "Tall", "Hairy","ugly","fat","thug","gangsta","tiny","huge","intelligent","rebellious","strong","courageous","quiet","friendly","imaginative","shy","friendly","kind","tyrannical","funny","observant","cowardly","dull","obedient","mysterious","vulgar","Mystical","mature","Immature","dense","predictable","scrawny","dumb","tiny","beautiful","one eyed","redneck","short","fat","skinny","thin","wide","beautiful","dirty","poor","dark","dangerous","black","paranoid","confused","excited","bouncy","faceless","dishonest","speechless","lonely","peaceful","inappropriate","round", "fuzzy", "sharp", "dirty", "ugly", "mentally unstable", "robotic", "obese", "overweight", "evil", "annoying", "multiheaded","big headed","hillblilly", "dinosaur-armed","big nosed","thug","gucci","short","lame","pitty","disgusting","ugly","cute","fluffy","sweet","short","ugly","grouchy","fat","skinny","chunky","smelly","dirty","lame","pitiful","ugly","flat","Giant","puking"];
+      var animal = ["unicorn","raven","sparrow","scorpion","coyote","eagle","owl","lizard","zebra","duck","kitten","unicorn","raven","sparrow","scorpion","coyote","eagle","owl","lizard","zebra","duck","kitten","unicorn","Puppies",
+      "kittens","horses","bunnies","zebras","dog","dragon","unicorn","snake","kitten","shark","Dolphin","Drop bear","Leopard","Bear","Sting ray","Kangaroo","owl","lizard","fish","rat","cheetah","cow","sheep","chicken","cheetah",
+      "cow","Cheetah","dog","cat","zebra","fish","Rat","cow","Sheep","chicken","Wolf","scorpion","crocodile","alligator","cat","dog","lizard","queko","mice","turkey","squirrel","deer","wolf","narhwal","tropical shrimp",
+      "monkey","chicken","tiger","Dog", "Horse", "Cheetah", "Leopard", "Giraffe", "Rabbit","horse","giraffe","zebra","cat","bear", "fish", "wolf", "fox", "cow", "calf", "horse", "foal", "frog", "clownfish", "pufferfish", "shrimp",
+      "crab","tiger","chicken","horse","mule","cricket","bush baby","blobfish","sloth","Cyclops","dragon","zombie","dragon","lizard","human","tiger","lion","komodo dragon","zombie","snake","wolf","lizard","dragon","velociraptor","snake",
+      "zombie","tiger","tyrannosaurus rex","spider","scorpion","grizzly bear","Frog","turtle","weasel","duck","kitten","chicken","peacock","toucan","troll","hippocampus","hydra","phoenix","gorgon","meerkat","owl","giraffe","arctic seal","Alligator","Chicken",
+      "owl","scorpion","coyote","eagle","snake","lizard","Lion","goldfish","dog","elephant","tiger","panda","camel","jellyfish","rabbit","mouse","bird","deer","rabbit","elk","pig","cow","bull","groundhog","uniduck",
+      "pizzaduck", "crab", "Cat", "Tiger", "Lion", "Bear","unicorn","duck","kitten","horse","megalodon","pegasus","crab","spider","chicken","pig","ant","dragon","mermaid","owl","shark","dodo","racoon","flamingo","yeti",
+      "bigfoot","ogre","werewolf","vampire","dragon","cerberus","dog","lion","tiger","monkey","lizard","newt","koala","tapir","chicken","horse","pig","puppy","mouse","wild dog","wild cat","bear","duck","kitten","dragon",
+      "turtle","duck","minotaur","loch ness monster","alien","bat","rat","chicken","Sloth", "clown fish", "gazelle", "peacock", "camel", "elephant", "ostrich","Shark","Geese","Duck","Bat","Pig","Tiger","Elephant","Mink","tiger","cougar",
+      "bat","bear","fish","stingray","rabbit"];
+      var synonymsForFun = ["sport","fun","play","a joke","joy","cheer","a game","mirth","a romp","a sight","nonsense","a treat","absurdity","enjoyment","a pastime","a blast","buffoonery","clowning","festivity","tomfoolery","foolery","horseplay","playfulness","highjinks","joking","drivel","baloney","babble","diddle","folly","foolishness","gibberish","madness","rubbish","silliness","stupidity","balderdash","bananas","craziness","giddiness","hogwash","hooey","jest","poppycock","tripe","a goof","goofiness","applesauce","a farce","idiocy","daftness","illogicalness","insanity","madness","lunacy","horse feathers","mish mash","malarky","monkey business","antics","clowning around","absurdness","a prank","mischief","monkeyshine","piffle","a delight","regalement","hilarity","hoopla","comedy","a schtick","satire","humor","slapstick","a scene","a display","a spectacle","a show"];
+      var synonymsForLaughed = ["laughed","chuckled","giggled","grinned","LOL'd","ROFL'd","howled","snickered","snorted","chortled","cracked up","smirked","cackled","guffawed","smiled","was amused","was delighted","was happy","was pleased","beamed","died laughing","was entertained","was tickled"];
+    </script>
+  </body>
+</html>
